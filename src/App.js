@@ -9,23 +9,23 @@ class App extends Component {
     super(props)
 
     this.state = {
-      playerRanks: {
-        "Mathan": 1,
-        "Sheppan": 5,
-        "Zuccan": 4,
-        "BoranHeaton": 2,
-        "Limpan": 3,
-        "Suppe": 6,
-        "Maggot": 7,
-        "Mouth": 8,
-        "Oezt": 9,
-        "BigB": 10,
-        "Ankan": 11,
-        "Widiz": 12,
-        "Tracer": 13,
-        "Heimdal": 14,
-        "Steffe": 16,
-        "MgO": 15
+      playerRanks: { // encoded for confidentiality :)
+        "Märta-Louise": "MTM=",
+        "Sheppan": "MTA1",
+        "Zuccan": "NzM=",
+        "BoranHeaton": "MjA=",
+        "Limpan": "NDM=",
+        "Suppe": "MTIx",
+        "Magg0t": "OTM=",
+        "Mouth": "NDM=",
+        "Oezt": "MjQ=",
+        "BigB": "NDM=",
+        "Ankan": "NjA=",
+        "Widiz": "NDM=",
+        "Tracer": "OTU=",
+        "Heimdall": "MzQ=",
+        "Steffe": "NQ==",
+        "Mg0": "ODg="
       },
       selectedPlayers: new Set(),
       teams: [],
@@ -78,8 +78,8 @@ class App extends Component {
       const opponentTeam = selectedPlayers.filter(player => !firstTeam.includes(player))
       
       // calculate team scores
-      const firstTeamScore = firstTeam.reduce((acc, currentPlayer) => acc + this.state.playerRanks[currentPlayer], 0)
-      const opponentTeamScore = opponentTeam.reduce((acc, currentPlayer) => acc + this.state.playerRanks[currentPlayer], 0)
+      const firstTeamScore = firstTeam.reduce((acc, currentPlayer) => acc + parseInt(window.atob(this.state.playerRanks[currentPlayer])), 0)
+      const opponentTeamScore = opponentTeam.reduce((acc, currentPlayer) => acc + parseInt(window.atob(this.state.playerRanks[currentPlayer])), 0)
       const scoreDiff = Math.abs(firstTeamScore - opponentTeamScore)
 
       teamsAndScores.push([[firstTeam, firstTeamScore], [opponentTeam, opponentTeamScore], scoreDiff])
@@ -102,6 +102,7 @@ class App extends Component {
         </div>
         <div className="content">
           <h2>Select players</h2>
+          <p>Selected players will be divided into two equally strong teams. Click "Generate Teams!" button and team suggestions will be presented below.</p>
           <div className="checkboxes-container">
             {Object.keys(this.state.playerRanks).map(player => <Checkbox 
                 label={player}
@@ -113,7 +114,8 @@ class App extends Component {
           <button onClick={this.generateTeams}>Generate Teams!</button>
           {this.state.teams.length > 0 &&
             <div>
-              <h2>Teams</h2>
+              <h2>Team suggestions</h2>
+              <p>Team suggestions are sorted with the most equal teams on top, followed by the second most equal teams, etc.</p>
               {this.state.teams.slice(0, 10).map((team, index) => 
                 <Teams 
                   key={index}
