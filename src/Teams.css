@@ -1,0 +1,29 @@
+.teams-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.team-container {
+  flex-grow: 1;
+  max-width: 120px;
+  background-color: #e9ecef;
+  border: 2px solid white;
+  padding-bottom: 10px;
+}
+
+.team-container h3 {
+  margin: 8px;
+}
+
+.team-container p {
+  margin: 0px 4px 8px 4px;
+  font-weight: 600;
+  text-align: left;
+  padding-left: 12px;
+}
+
+.team-container div {
+  text-align: left;
+  padding-left: 16px;
+}

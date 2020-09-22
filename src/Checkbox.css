@@ -1,0 +1,19 @@
+.checkbox-container {
+  margin: 8px;
+  flex-grow: 1;
+  width: 150px;
+  text-align: left;
+}
+
+label {
+  font-size: 20px;
+}
+
+label, input {
+  cursor: pointer;
+  color: #4a4a4a;
+}
+
+label:hover, input:hover {
+  color: #000;
+}
