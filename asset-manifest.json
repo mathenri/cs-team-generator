@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/cs-team-generator/static/css/main.f2ed3644.chunk.css",
+    "main.js": "/cs-team-generator/static/js/main.13bbf2a0.chunk.js",
+    "main.js.map": "/cs-team-generator/static/js/main.13bbf2a0.chunk.js.map",
+    "runtime-main.js": "/cs-team-generator/static/js/runtime-main.034a0a57.js",
+    "runtime-main.js.map": "/cs-team-generator/static/js/runtime-main.034a0a57.js.map",
+    "static/js/2.b0140600.chunk.js": "/cs-team-generator/static/js/2.b0140600.chunk.js",
+    "static/js/2.b0140600.chunk.js.map": "/cs-team-generator/static/js/2.b0140600.chunk.js.map",
+    "index.html": "/cs-team-generator/index.html",
+    "precache-manifest.bf78128a61c40f327fdce46f9680134f.js": "/cs-team-generator/precache-manifest.bf78128a61c40f327fdce46f9680134f.js",
+    "service-worker.js": "/cs-team-generator/service-worker.js",
+    "static/css/main.f2ed3644.chunk.css.map": "/cs-team-generator/static/css/main.f2ed3644.chunk.css.map",
+    "static/js/2.b0140600.chunk.js.LICENSE.txt": "/cs-team-generator/static/js/2.b0140600.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/cs-team-generator/static/media/lan.f6060291.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.034a0a57.js",
+    "static/js/2.b0140600.chunk.js",
+    "static/css/main.f2ed3644.chunk.css",
+    "static/js/main.13bbf2a0.chunk.js"
+  ]
+}
