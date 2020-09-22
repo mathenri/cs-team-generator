@@ -25,6 +25,7 @@ class App extends Component {
         "Tracer": 13,
         "Heimdal": 14,
         "Steffe": 16,
+        "MgO": 15
       },
       selectedPlayers: new Set(),
       teams: [],
