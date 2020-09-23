@@ -10,22 +10,22 @@ class App extends Component {
 
     this.state = {
       playerRanks: { // encoded for confidentiality :)
-        "Märta-Louise": "MTM=",
-        "Sheppan": "MTA1",
-        "Zuccan": "NzM=",
-        "BoranHeaton": "MjA=",
-        "Limpan": "NDM=",
-        "Suppe": "MTIx",
-        "Magg0t": "OTM=",
-        "Mouth": "NDM=",
-        "Oezt": "MjQ=",
-        "BigB": "NDM=",
-        "Ankan": "NjA=",
-        "Widiz": "NDM=",
-        "Tracer": "OTU=",
-        "Heimdall": "MzQ=",
-        "Steffe": "NQ==",
-        "Mg0": "ODg="
+        "Suppe": "MTAuMA==",
+        "Sheppan": "OC4x",
+        "Trac3r": "Ny41",
+        "Magg0t": "Ny41",
+        "Mg0": "Ny4z",
+        "Ankan": "Ni41",
+        "Zuccan": "Ni4z",
+        "BigB": "Ni4x",
+        "Limpan": "NS41",
+        "Widiz": "NS4x",
+        "Oezt": "NC41",
+        "Mouth": "NC4z",
+        "BoranHeaton": "My40",
+        "Märta-Louise": "My41",
+        "Heimdall": "My40",
+        "Steffe": "Mi4x",
       },
       selectedPlayers: new Set(),
       teams: [],
@@ -78,8 +78,10 @@ class App extends Component {
       const opponentTeam = selectedPlayers.filter(player => !firstTeam.includes(player))
       
       // calculate team scores
-      const firstTeamScore = firstTeam.reduce((acc, currentPlayer) => acc + parseInt(window.atob(this.state.playerRanks[currentPlayer])), 0)
-      const opponentTeamScore = opponentTeam.reduce((acc, currentPlayer) => acc + parseInt(window.atob(this.state.playerRanks[currentPlayer])), 0)
+      let firstTeamScore = firstTeam.reduce((acc, currentPlayer) => acc + parseFloat(window.atob(this.state.playerRanks[currentPlayer])), 0)
+      //firstTeamScore /= firstTeam.length
+      let opponentTeamScore = opponentTeam.reduce((acc, currentPlayer) => acc + parseFloat(window.atob(this.state.playerRanks[currentPlayer])), 0)
+      //opponentTeamScore /= opponentTeam.length
       const scoreDiff = Math.abs(firstTeamScore - opponentTeamScore)
 
       teamsAndScores.push([[firstTeam, firstTeamScore], [opponentTeam, opponentTeamScore], scoreDiff])

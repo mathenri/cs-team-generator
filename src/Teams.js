@@ -7,12 +7,12 @@ export default function Teams({ team1, team2, team1Score, team2Score }) {
       <div className="teams-container">
         <div className="team-container">
           <h3>Team 1</h3>
-          <p>Score: {team1Score}</p>
+          <p>Score: {team1Score.toFixed(1)}</p>
           {team1.map(player => <div key={player}>{player}</div>)}
         </div>
         <div className="team-container">
           <h3>Team 2</h3>
-          <p>Score: {team2Score}</p>
+          <p>Score: {team2Score.toFixed(1)}</p>
           {team2.map(player => <div key={player}>{player}</div>)}
         </div>
       </div>
