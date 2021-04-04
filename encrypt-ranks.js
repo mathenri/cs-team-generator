@@ -16,7 +16,8 @@ NAME_TRANSLATIONS = {
   'Johan "BoranHeaton" Kvarnemo': 'BoranHeaton',
   'Mattias "Märtha-Louise" Henriksson': 'Märta-Louise',
   'Mikael "Haimdall" Nelander': 'Heimdall',
-  'Stefan  "Stroifanoff" Viberg': 'Steffe'
+  'Stefan  "Stroifanoff" Viberg': 'Steffe',
+  'Christopher "Stoffah" Kristensen': 'Stoffah'
 }
 
 fs.readFile('ranks.txt', 'utf8', function (err,data) {
