@@ -24,7 +24,7 @@ fs.readFile('ranks.txt', 'utf8', function (err,data) {
   if (err) {
     return console.log(err);
   }
-  let rankInput = data.replace(",", ".")
+  let rankInput = data.replace(/,/g, ".")
   rankInput = rankInput.split('\n');
   rankDict = {}
   for (let row of rankInput) {
